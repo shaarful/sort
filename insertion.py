@@ -1,11 +1,13 @@
 def insertion_sort(array):
     for j in range(1, len(array)):
-        key = array[j]
+        # j = 1, i = 0
         i = j - 1
-        while i > 0 and array[i] > key:
-            array[i + 1] = array[i]
+        key = array[i + 1]
+        while i >= 0 and array[i] > key:
+            tmp = array[i]
+            array[i] = array[i + 1]
+            array[i + 1] = tmp
             i = i - 1
-        array[i + 1] = key
 
     return array
 
